@@ -1,0 +1,60 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+.parent{
+    width: 50%;
+    margin-left: 370px;
+}
+.p-staff{
+    font-size: 26px;
+    margin-top: 50px;
+    color: #660b49;
+}
+.each-staff{
+background-color: white;
+height: 60px;
+display: flex;
+align-items: center;
+padding-left: 10px;
+border-bottom: 0.0625rem solid #e0e0e0;
+font-size: 18px;
+
+}
+.img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.staff-name{
+    padding-left: 30px;
+}
+
+.p-students{
+    font-size: 26px;
+    margin-top: 50px;
+    color: #660b49;
+}
+
+.each-student{
+    background-color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 0.0625rem solid #e0e0e0;
+    font-size: 18px;
+    
+    }
+    .img{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+    .student-name{
+        padding-left: 30px;
+    }

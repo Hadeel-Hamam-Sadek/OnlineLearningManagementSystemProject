@@ -1,0 +1,172 @@
+﻿
+@using OnlineLearningManagementSystemProject.ViewModel
+@model List<CourseViewModel>
+
+
+@*<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+                        <tr>
+                           
+                            <td>@course.courseName</td>
+                            <td>@course.courseCode</td>
+                        </tr>
+        }
+    </tbody>
+</table>*@
+
+
+@{
+    Layout = null;
+}
+
+
+
+
+<head>
+    <title>Staff Courses</title>
+    <link rel="stylesheet" href="~/css/Staff Courses.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+
+
+    <body>
+
+
+        <nav class="header" id="nav">
+
+            <img src="~/images/logo2.png" alt="" class="logo">
+            <div class="navItems">
+                <div>
+                  <i class="fa fa-solid fa-bookmark icons" id="icon1"></i>
+                <a href="/StaffCourse/GetCoursesStaff?id=@ViewBag.StaffId" class="nav-link " onclick="changeIcon1()">Courses</a>
+                </div>
+                <div>
+                  <i class="fa fa-solid fa-bookmark icons" id="icon2"></i>
+                 <a href="@Url.Action("GetstaffById", "Staff", new { id = @ViewBag.StaffId })" class="nav-link " onclick="changeIcon2()">Profile</a>
+                
+                </div>
+                <div>
+                <a href="@Url.Action("Logout", "Account")" class="nav-link">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="container">
+
+            <span class="courses">COURSES</span>
+    </div>
+
+
+    <div class="cardsparent">
+
+        @foreach (var course in Model)
+        {
+            <div class="card">
+                <div class="imageincard">
+                    <img src="~/@course.pathimage" class="image">
+                </div>
+                <div class="card__body">
+                    <p>@course.courseName</p>
+                    <!-- <p><span class="spanincontent">Dr</span>Mahmoud Mo Mahmoud</p> -->
+                </div>
+                    
+              <span>
+                    <a asp-controller="Material" asp-action="classwork" asp-route-courseId="@course.courseid" asp-route-staffId="@ViewBag.StaffId" class="linkinhover" target="_blank">Go to Course</a>
+            </span>                   
+    </div>
+        }
+    </div>
+
+      @*  <div class="cardsparent">
+
+            <div class="card">
+                <div class="imageincard">
+                    <img src="img/WhatsApp Image 2023-05-12 at 22.58.45.jpg" class="image">
+                </div>
+                <div class="card__body">
+                    <p>C++ Programming Language</p>
+                    <!-- <p><span class="spanincontent">Dr</span>Mahmoud Mo Mahmoud</p> -->
+                    <p>6 Lectures</p>
+                </div>
+                <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+
+            <div class="card">
+                <div class="imageincard">
+                    <img src="img/WhatsApp Image 2023-05-12 at 22.58.45.jpg" class="image">
+                </div>
+                <div class="card__body">
+                    <p>Artificial Intelligence Course</p>
+                    <!-- <p>Hadeel Hamam Sadek</p> -->
+                    <p>7 Lectures</p>
+                </div>
+                <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+
+            <div class="card">
+                <div class="imageincard">
+                    <img src="img/blog-2.jpg" class="image">
+                </div>
+                <div class="card__body">
+                    <p>Web Development Course</p>
+                    <!-- <p>Hayam Mahmoud Mohamed  </p> -->
+                    <p>6 Lectures</p>
+                </div>
+                <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+
+            <div class="card">
+                <div class="imageincard">
+                    <img src="img/blog-1.jpg" class="image">
+                </div>
+                <div class="card__body">
+                    <p>Computer Architecture Course</p>
+                    <!-- <p>Asmaa Khamis Basiouny</p> -->
+                    <p>8 Lectures</p>
+                </div>
+                <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+            <div class="card">
+                <div class="imageincard">
+                    <img src="img/blog-3.jpg" class="image">
+                </div>
+                <div class="card__body">
+                    <p>Data Base Fundamentals Course</p>
+                    <!-- <p>Ayman Ramadan Eisaa</p> -->
+                    <p>4 Lectures</p>
+                </div>
+                <span><a href="../Course Page/Classwork.html" class="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+
+            <div class="card">
+                <div class="imageincard">
+                    <img src="img/cat-7.jpg" class="image">
+                </div>
+                <div class="card__body">
+                    <p>Data Structure I Course</p>
+                    <!-- <p>Doha Ahmed Ezzat</p> -->
+                    <p>0 Lectures</p>
+                </div>
+                <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+
+*@
+
+
+@*        </div>
+*@
+        <footer style="height: 200px;"></footer>
+    <script src="~/js/staff courses.js"></script>
+    </body>

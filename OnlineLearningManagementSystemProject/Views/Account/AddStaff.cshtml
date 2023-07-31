@@ -1,0 +1,106 @@
+﻿@model OnlineLearningManagementSystemProject.ViewModel.StaffRegistrationViewModel
+
+@{
+    ViewData["Title"] = "AddStaff";
+}
+
+@*<h1>AddStaff</h1>
+
+<h4>StaffRegistrationViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddStaff">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+*@
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/adduser.css" rel="stylesheet" />
+    <title>Add Staff</title>
+</head>
+
+<body>
+    <div class="header-add-student">
+        <span class="add-student">Add Staff</span>
+    </div>
+
+
+    <div class="div-form">
+        <form method="post" asp-action="AddStaff" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="enroll-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="enroll" type="email" asp-for="Email" placeholder="Email" required>
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <div class="enroll-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="enroll" type="password" asp-for="Password" placeholder="Password" required>
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <div class="enroll-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="enroll" type="password" asp-for="ConfirmPassword" placeholder="Confirm Password" required>
+            </div>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+
+            <button type="submit" class="btn-addstudent">Add Staff</button>
+
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

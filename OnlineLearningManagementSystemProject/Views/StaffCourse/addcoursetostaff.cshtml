@@ -1,0 +1,65 @@
+﻿@using OnlineLearningManagementSystemProject.ViewModel
+@model List<StaffCourseViewModel>
+
+@*<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.CourseName</td>
+                <td>@course.CourseCode</td>
+                <td>
+                    <form method="post" asp-action="addcoursetostaff">
+                            <input type="hidden" name="staffid" value="@ViewBag.StaffId" />
+                        <input type="hidden" name="courseId" value="@course.CourseId" />
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Course to Student</title>
+    <link rel="stylesheet" href="~/css/Courses - Copy.css" />
+</head>
+<body>
+
+    <div class="header-add-student">
+        <span class="add-student">Assign Course to Staff</span>
+
+    </div>
+
+    <table>
+
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.CourseName</td>
+                    <td class="td-3">
+                        <form method="post" asp-action="addcoursetostaff">
+                            <input type="hidden" name="StaffId" value="@ViewBag.StaffId" />
+                            <input type="hidden" name="courseId" value="@course.CourseId" />
+                            <button type="submit" class="btn-Add">Add</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>

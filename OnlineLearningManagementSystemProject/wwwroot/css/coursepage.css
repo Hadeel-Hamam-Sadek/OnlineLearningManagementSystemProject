@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primaryColor: #7d467f;
+}
+
+#nav {
+    background-color: var(--primaryColor);
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    color: white;
+    padding-left: 25px;
+}
+
+.logo {
+    width: 116px;
+}
+
+.navItems {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    justify-content: space-around;
+}
+
+    .navItems a {
+        position: relative;
+    }
+
+    .navItems div {
+        width: 30%;
+    }
+
+#icon1,
+#icon2 {
+    font-size: 165px;
+    color: #481D3B;
+    position: absolute;
+    top: -115px;
+    transition: top 2s,color;
+}
+
+#icon1 {
+    right: 21%;
+    /* left: auto; */
+    /* margin-left: -5%; */
+    height: 60%;
+    /* text-align: center; */
+}
+
+#icon2 {
+    right: 11%;
+}
+
+    #icon1:hover,
+    #icon2:hover {
+        top: -17px;
+    }
+
+.img {
+    width: 100%;
+    background-position: center;
+    justify-content: space-between;
+    /* background-size: cover; */
+    margin-bottom: 50px;
+    /* height: 450px; */
+}
+
+.material {
+  font-size: large;
+  color: white;
+  background-color: #9e5788;
+  font-weight: bold;
+  padding: 40px;
+}
+
+.Assignment {
+  /* display: flex;
+    justify-content: space-between; */
+  background-color: #9e5788;
+  padding: 35px;
+}
+
+.Exams {
+  /* display: flex;
+    justify-content: space-between; */
+  background-color: #9e5788;
+  padding: 35px;
+}
+
+#myDIV,
+#myDIV2,
+#myDIV3 {
+  padding: 35px;
+}
+
+.all,
+.date {
+  font-size: large;
+  font-weight: bold;
+}
+
+.date {
+  margin: 90px;
+}
+
+.all i {
+  font-size: 25px;
+}
+#myDIV a,
+#myDIV2 a,
+#myDIV3 a {
+  text-decoration: none;
+  color: black;
+  padding-top: 6px;
+}
+
+.button {
+  border-radius: 5%;
+  position: relative;
+  border-radius: 100px;
+
+  width: 170px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #2f0f73;
+  background-color: #2f0f73;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #2f0f73;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+
+.button .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.button:hover {
+  background: #2f0f73;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button2 {
+  cursor: pointer;
+  font-weight: 700;
+  width: 170px;
+  height: 50px;
+  color: #fff;
+  font-family: Helvetica, "sans-serif";
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #2f0f73;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.button2:hover {
+  background: #2f0f73;
+}
+
+.button2 > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button2:hover svg {
+  transform: translateX(5px);
+}
+
+.button2:active {
+  transform: scale(0.95);
+}
+
+/* From uiverse.io by @Ali-Tahmazi99 */
+.start {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #03045e;
+  position: relative;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+
+.start::before,
+.start::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.start::before {
+  left: -10px;
+  background: #240046;
+}
+
+.start::after {
+  right: -10px;
+  background: #5a189a;
+}
+
+.start:hover::before,
+.start:hover::after {
+  width: 58%;
+}
+
+.start:hover span {
+  color: #e0aaff;
+  transition: 0.3s;
+}
+
+.start span {
+  color: #03045e;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}
+.Closed {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #03045e;
+  position: relative;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+
+.Closed::before,
+.Closed::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.Closed::before {
+  left: -10px;
+  background: #2a262e;
+}
+
+.Closed::after {
+  right: -10px;
+  background: #2a262e;
+}
+
+.Closed:hover::before,
+.Closed:hover::after {
+  width: 58%;
+}
+
+.Closed:hover span {
+  color: #656466;
+  transition: 0.3s;
+}
+
+.Closed span {
+  color: #333336;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}
+.content {
+  border-radius: 30px;
+  background-color: #5f0843;
+  color: #fff;
+}
+.videos,
+.files,
+.links,
+.Assignment1,
+.Assignment2,
+.Exam1,
+.Exam2 {
+  background-color: #8a8585;
+  width: 190px;
+  height: 50px;
+}

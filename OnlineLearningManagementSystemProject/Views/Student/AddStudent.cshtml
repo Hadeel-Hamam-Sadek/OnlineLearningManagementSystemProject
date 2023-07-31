@@ -1,0 +1,78 @@
+﻿@model OnlineLearningManagementSystemProject.Models.Student
+
+@{
+    ViewData["Title"] = "AddStudent";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/AddUser.css">
+    <title>Add Student</title>
+</head>
+<body>
+
+    <div class="header-add-student">
+        <span class="add-student">Add Student</span>
+    </div>
+
+    <div class="div-form">
+        <form method="post" class="form" enctype="multipart/form-data" asp-action="Add">
+            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+            <div class="fullname">
+                <input asp-for="FirstName" id="firstname-input" placeholder="First Name" required>
+                <br>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <br>
+                <!-- <label for="lastname-input" class="lastname-label">Last Name</label> -->
+                <input asp-for="LastName" id="lastname-input" placeholder="Last Name" required>
+                <br>s
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                <input type="hidden" asp-for="UserID" value=@ViewBag.UserId />
+            </div>
+
+            <div class="nid-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input minlength="14" maxlength="14" type="text" id="nid" asp-for="NationalID" placeholder="National ID" required>
+                <span asp-validation-for="NationalID" class="text-danger"></span>
+            </div>
+
+            <div class="Uni-id-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input asp-for="UniversityID" id="UniId" type="text" placeholder="University ID" required>
+                <span asp-validation-for="UniversityID" class="text-danger"></span>
+
+            </div>
+
+            <div class="mobile-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input asp-for="Mobile" id="mobile" type="text" placeholder="Mobile Number" required>
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+
+            <div class="enroll-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input asp-for="EnrollYear" id="enroll" type="number" placeholder="Enrollment Year" required>
+                <span asp-validation-for="EnrollYear" class="text-danger"></span>
+            </div>
+
+            <div class="img-div">
+
+                <label asp-for="formFile" class="img-label" for="img">Student Picture</label>
+                <input type="file" asp-for="formFile" id="img" placeholder="Student Picture" accept="image/*">
+@*                <span asp-validation-for="formFile" class="text-danger"></span>
+*@            </div>
+
+            <button type="submit" class="btn-addstudent">Add Student</button>
+
+        </form>
+    </div>
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

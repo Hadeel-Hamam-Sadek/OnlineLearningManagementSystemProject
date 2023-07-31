@@ -1,0 +1,18 @@
+﻿@model List<OnlineLearningManagementSystemProject.Models.Staff>
+<h2>Staffs</h2>
+
+@if (Model.Any())
+{
+            <ul>
+        @foreach (var staff in Model)
+        {
+                      <li>@staff.FirstName @staff.LastName</li>
+        }
+            </ul>
+}
+else
+{
+            <p>No Staffs found for this course.</p>
+}
+
+

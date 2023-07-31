@@ -1,0 +1,114 @@
+﻿@using OnlineLearningManagementSystemProject.ViewModel
+@model List<EnrollYearStudentNameViewModel>
+
+@*<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Enrollment Year</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var student in Model)
+            {
+                    <tr>
+                        <td>@student.studentname</td>
+                        <td>@student.enrollyear</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>*@
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Styles Admin.css" />
+    <link rel="stylesheet" href="~/css/Management.css" />
+    <script src="https://kit.fontawesome.com/79be1594f8.js" crossorigin="anonymous"></script>
+
+    <title>Management</title>
+</head>
+
+<body>
+
+    <nav class="header" id="nav">
+        <img src="~/images/logo2.png" alt="" class="logo" />
+        <div class="navItems">
+            <div>
+                <i class="fa fa-solid fa-bookmark icons" id="icon1"></i>
+                <a href="/Student/GetStudentsASEnrollYear/" class="nav-link">Management</a>
+                
+            </div>
+            <div>
+                <i class="fa fa-solid fa-bookmark icons" id="icon2"></i>
+                <a href="@Url.Action("GetstaffById", "Staff")" class="nav-link">Profile</a>
+            </div>
+            <div>
+                <a href="@Url.Action("Logout", "Account")" class="nav-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+    @*<div class="header">
+
+    <span class="admin-name">Mahmoud Mohamed</span>
+    <span class="logout"><a href="#">Logout</a></span>
+    <span class="Students">Students</span>
+    </div> *@
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Management Students')" id="defaultOpen">
+            Management Students
+        </button>
+        <button class="tablinks" onclick="location.href= '/Staff/GetStaffASNationaliId/@ViewBag.StaffId'" ;>
+            Management Staff
+        </button>
+        <button class="tablinks" onclick="location.href= '/Course/Index/@ViewBag.StaffId'";>
+            Management Courses
+        </button>
+    </div>
+
+
+    <div id="Management Students" class="tabcontent">
+        <form action="~/Student/SearchStudents">
+            <input type="search" name="name" value="@ViewBag.search" placeholder="Search Student Name " />
+        </form>
+
+        <table class="table1">
+            <tr>
+                <th class="th1">Name</th>
+                <th class="th1">Enrollment Year</th>
+                <th class="th1">Action</th>
+            </tr>
+
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td class="td1">@student.studentname</td>
+                    <td class="td-2">@student.enrollyear</td>
+                    <td class="td-3">
+                        <a href="@Url.Action("getStudentById", "Student", new { id = student.studentid })"> <button class="btn-td3">Details</button></a>
+                        <a href="@Url.Action("Update", "Student", new { id = student.studentid })"> <button class="btn-td3">Update</button> </a>
+                        <a href="@Url.Action("GetCoursesStudentByAdmin", "StudentCourse", new { id = student.studentid })"> <button class="btn-td3">Courses</button></a>
+                        <a href="@Url.Action("Delete", "Student", new { id = student.studentid })"> <button class="btn-Delete">Delete</button></a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <br><br>
+         <a href="@Url.Action("AddStudent", "Account")"> <button class="btn-addstudent">Add Student</button></a>
+
+
+
+        <script src="~/js/Admin.js"></script>
+
+</body>

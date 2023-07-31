@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>@ViewData["Title"] - OnlineLearningManagementSystemProject</title>
+    
+
+@*    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+*@    @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
+    @* <link rel="stylesheet" href="~/OnlineLearningManagementSystemProject.styles.css" asp-append-version="true" />*@
+@*    <link rel="stylesheet" href="~/css/login.css" />
+*@   
+@*<link rel="stylesheet" href="~/css/coursepage.css" />
+*@    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@*    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Roboto+Slab:wght@300&display=swap"
+        rel="stylesheet">*@
+
+    @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>*@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Roboto+Slab:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <style>
+       /* #nav {
+            background-color: var(--primaryColor);
+            width: 100%;
+            height: 100px;
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            align-content: center;
+            color: white;
+        }
+        .nav-link {
+            display: block;
+            padding: .5rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+       }
+
+        .logo {
+            width: 120px;
+        }
+
+        .navItems {
+            align-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            width: 30%;
+            justify-content: space-around;
+        }
+
+        .navItems a {
+            position: relative;
+        }
+        #icon1,
+        #icon2 {
+            font-size: 165px;
+            color: #481D3B;
+            position: absolute;
+            top: -115px;
+            transition: top 2s,color ;
+        }
+
+        #icon1 {
+            right: 295px;
+            height: 60%;
+        }
+
+        #icon2 {
+            right: 150px;
+        }
+
+        #icon1:hover,
+        #icon2:hover {
+            top: -17px;
+        }*/
+    </style>
+        
+
+    <script>
+
+        //function changeIcon1() {
+        //        document.getElementById("icon1").style.top = "-17px";
+        //        document.getElementById("icon1").style.color = "#C270A8";
+        //        document.getElementById("icon2").style.top = "-115px";
+        //        document.getElementById("icon2").style.color = "#481D3B";
+
+
+
+        //}
+        //function changeIcon2() {
+        //        document.getElementById("icon2").style.top = "-17px";
+        //        document.getElementById("icon2").style.color = "#C270A8";
+        //        document.getElementById("icon1").style.top = "-115px";
+        //        document.getElementById("icon1").style.color = "#481D3B";
+
+
+
+        //}
+        
+    </script>
+</head>
+
+<body>
+    <!-- nav -->
+    @*<nav class="header" id="nav">
+
+        <img src="~/images/logo2.png" alt="" class="logo">
+        <div class="navItems">
+            <div>
+                <i class="fa fa-solid fa-bookmark" id="icon1"></i>
+                <a href="#" class="nav-link" onclick="changeIcon1()">Courses</a>
+            </div>
+            <div>
+                <i class="fa fa-solid fa-bookmark" id="icon2"></i>
+                <a href="#" class="nav-link" onclick="changeIcon2()">Profile</a>
+            </div>
+            <a href="" class="nav-link">Logout</a>
+        </div>
+    </nav>*@
+            @RenderBody()
+        </main>
+    </div>
+
+   @* <div style="height: 65px;">
+        <p class="Copyright">&copy; All rights reserved</p>
+    </div>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/coursepage.js" ></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,139 @@
+﻿@*@model IEnumerable<OnlineLearningManagementSystemProject.Models.Material>
+@{
+    var courseName = Model.FirstOrDefault()?.Course?.CourseName;
+    var baseUrl = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.PathBase}";
+}
+
+<h2>Lectures</h2>
+@if (!string.IsNullOrEmpty(courseName))
+{
+        <h3>Course: @courseName</h3>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Doctor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lecture in Model)
+        {
+                <tr>
+                    <td>@lecture.MaterialName</td>
+                    <td>@lecture.Staff.FirstName @lecture.Staff.LastName</td>
+                    <td><a href="@($"{baseUrl}/{lecture.MaterialPath}")"  target="_blank">View</a></td>
+                </tr>
+        }
+    </tbody>
+</table>*@
+
+@model IEnumerable<OnlineLearningManagementSystemProject.Models.Material> 
+@{
+    var courseName = Model.FirstOrDefault()?.Course?.CourseName; 
+    var courseimage = Model.FirstOrDefault()?.Course?.CourseImage;
+    var baseUrl = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.PathBase}";
+} 
+@*@if (!string.IsNullOrEmpty(courseName)) 
+{ 
+        <h3>@courseName</h3> 
+} *@
+<head>
+    <script src="https://kit.fontawesome.com/90731aa833.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---Styles--->
+    <link rel="stylesheet" href="~/css/coursepage.css">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <script src="~/js/coursepage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/arrow-up-right-from-square?f=classic&s=solid">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&family=Roboto+Slab:wght@300&display=swap"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+<!-- nav -->
+<nav class="header" id="nav">
+
+    <img src="~/images/logo2.png" alt="" class="logo">
+    <div class="navItems">
+        <div>
+            <i class="fa fa-solid fa-bookmark icons" id="icon1"></i>
+           
+          
+            <a asp-action="GetCoursesStudent" asp-controller="StudentCourse" asp-route-id="@ViewBag.StudentID" class="nav-link" onclick="changeIcon1()">Courses</a></div>
+        <div>
+            <i class="fa fa-solid fa-bookmark icons" id="icon2"></i>
+            <a asp-action="getStudentById" asp-controller="Student" asp-route-id="@ViewBag.StudentID" class="nav-link " onclick="changeIcon2()">Profile</a>
+                
+        </div>
+        <div>
+            <a href="" class="nav-link">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="img">
+        <img src="~/images/page-header.jpg" style="width:100%;">
+</div>
+    <h3 style="margin: 0px 0px 30px 75px;">@courseName</h3>
+<div class="material row"> 
+    <span class="one col-sm">Material</span> 
+    <span class="two col-sm">@Model.Count()</span> 
+    @*<span class="three col-sm">@Model.FirstOrDefault().MaterialDate</span>*@ 
+ 
+    <button class="content" onclick="myFunction()" style="height: 40; width: 140px;">Content</button> 
+ 
+</div> 
+<div id="myDIV" class="container" style="display: none;"> 
+    <div class="file "> 
+        @foreach (var lecture in Model) 
+        { 
+            <div class="row">
+                    <h4 class=" videos col-sm all"><i class='bx bxs-videos' style="padding: 10px;"></i>&nbsp;@lecture.MaterialName  </h4>
+               
+                <div class="col-sm"></div> 
+ 
+                <h6 class="col-sm all date">@lecture.MaterialDate</h6> 
+               <div class="col-sm">
+                   <a href="@($"{baseUrl}/{lecture.MaterialPath}")" open target="_blank">
+                    <button class="button " type="button">
+                        <span class="button__text">Open</span>
+@*                       <a href="@($"{baseUrl}/{lecture.MaterialPath}")" open target="_blank" class="assign-name">Open</a>
+*@                        <span class="button__icon"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #fbf9f9;"></i></span>
+                    </button>
+                    </a>
+                </div>
+            </div> 
+            <br> 
+        } 
+    </div> 
+</div>
+</body>

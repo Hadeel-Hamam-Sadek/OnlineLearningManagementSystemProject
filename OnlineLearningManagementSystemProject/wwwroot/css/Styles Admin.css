@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    /* height: 610px; */
+}
+
+#nav {
+  background-color: #7D467F;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  color: white;
+  padding-left: 25px;
+}
+
+.logo {
+  width: 116px;
+}
+
+.navItems {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  justify-content: space-around;
+}
+
+.navItems a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+.navItems div{
+  width: 30%;
+}
+#icon1,
+#icon2 {
+  font-size: 165px;
+  color: #481D3B;
+  position: absolute;
+  top: -115px;
+  transition: top 2s,color ;
+}
+
+#icon1 {
+  right: 21%;
+  height: 30%;
+}
+
+#icon2 {
+  right: 11%;
+}
+
+#icon1:hover,
+#icon2:hover {
+  top: -17px;
+}
+
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 22%;
+  height: 109%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #C270A8;
+}
+
+/* Style the tab content */
+.tabcontent {
+  padding: 0px 12px;
+  /* border: 1px solid #ccc; */
+  width: 65%;
+  border-left: none;
+  float: left;
+  height: 300px;
+  margin-left: 100px;
+}
+.courseTable{
+  max-height: 452px;
+  overflow-y: scroll;
+}

@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-add-student{
+    height: 100px;
+    background-color: #7D467F;
+}
+
+.add-student{
+    position: absolute;
+    top: 30px;
+    left: 55px;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+
+
+}
+.h2{
+    display: flex;
+    justify-content: center;
+}
+table{
+    display: flex;
+    justify-content: center;
+    border-spacing: 50px;
+
+}
+ td{
+    font-size: 20px;
+    width: 300px;
+ }
+
+
+
+ .td-3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .btn-Delete{
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #cfa0c0;
+    font-size: 16px;
+  }
+
+  .btn-Delete:hover{
+    background-color: red;
+    color: white;
+  }
+  .btn-assign{
+    float: right;
+    margin-right: 80px;
+    margin-top: 25px;
+    width: 150px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+  }

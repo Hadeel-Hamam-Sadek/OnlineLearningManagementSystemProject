@@ -1,0 +1,57 @@
+﻿@using OnlineLearningManagementSystemProject.ViewModel
+@model DoctorStudentViewModel
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="~/css/styles.css"> 
+	<link rel="stylesheet" href="~/css/people.css">
+	<title>People Page</title>
+</head>
+
+<body id="People">
+	<nav>
+		<div class="brand">@Model.CourseName</div>
+
+		<div class="links">
+			<a data-active="Classwork" href="@Url.Action("classwork", "Material", new {courseId= @ViewBag.CourseId ,staffId = @ViewBag.StaffId })">Classwork</a>
+		
+			<a data-active="People" href="#">People</a>
+
+@*			<a data-active="Grades" href="Grades.html">Grades</a>
+*@		</div>
+	</nav>
+@*	<br>
+*@	<hr>
+
+	<div class="parent">
+		<p class="p-staff">Staff</p>
+		<hr>
+
+		<div class="div-staff">
+			@foreach (var doctorName in Model.DoctorNames)
+			{
+				<div class="each-staff">
+
+					<img src="~/@Model.DoctorImages[Model.DoctorNames.IndexOf(doctorName)]" alt="Doctor Image" class="img">
+					<p class="staff-name">@doctorName</p>
+					</div>
+
+			}
+		</div>
+
+		<p class="p-students">Students</p>
+		<hr>
+
+		<div class="div-student">
+			@foreach (var studentName in Model.StudentNames)
+			{
+				<div class="each-student">
+						<img src="~/@Model.StudentImages[Model.StudentNames.IndexOf(studentName)]" class="img"> 
+						<p class="student-name">@studentName</p>
+					</div>
+			}
+		</div>
+	</div>
+
+	<script src="~/js/script.js"></script>
+</body>

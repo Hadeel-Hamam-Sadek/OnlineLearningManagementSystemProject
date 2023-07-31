@@ -1,0 +1,63 @@
+﻿@model IEnumerable<OnlineLearningManagementSystemProject.Models.Material>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaterialPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.formFile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialPath)
+            </td>
+            <td>
+                
+                <a href=@item.MaterialPath download target="_blank">View</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaterialID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaterialID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaterialID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+

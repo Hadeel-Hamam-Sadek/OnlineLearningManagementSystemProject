@@ -1,0 +1,42 @@
+﻿@using OnlineLearningManagementSystemProject.ViewModel
+@model List<CourseListViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>National ID</th>
+            <th>University ID</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sc in Model)
+        {
+                <tr>
+                    <td>@sc.name</td>
+                    <td>@sc.email</td>
+                    <td>@sc.mobile</td>
+                    <td>@sc.nationalID</td>
+                    <td>@sc.universityID</td>
+                    <td>
+                    @foreach (var item in sc.StudentCourse)
+                    {
+                                <div>
+                                    <span>@item.courseName - @item.courseCode</span>
+                                </div>
+                    }
+                    </td>
+                    <td>
+                    @using (Html.BeginForm("AddCourse", "Student", FormMethod.Post))
+                    {
+                        @Html.Hidden("StudentId", sc.StudentId)
+                                <button type="submit" class="btn btn-primary">Add Course</button>
+                    }
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

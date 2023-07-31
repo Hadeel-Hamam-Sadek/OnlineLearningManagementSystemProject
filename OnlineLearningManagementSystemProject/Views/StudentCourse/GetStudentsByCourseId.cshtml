@@ -1,0 +1,18 @@
+﻿
+@model List<OnlineLearningManagementSystemProject.Models.Student>
+
+<h2>Students</h2>
+
+@if (Model.Any())
+{
+        <ul>
+        @foreach (var student in Model)
+        {
+                    <li>@student.FirstName @student.LastName</li>
+        }
+        </ul>
+}
+else
+{
+        <p>No students found for this course.</p>
+}

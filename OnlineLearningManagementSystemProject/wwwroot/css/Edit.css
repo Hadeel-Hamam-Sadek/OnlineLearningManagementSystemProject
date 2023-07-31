@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-add-student {
+    height: 100px;
+    background-color: #7D467F;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.add-student {
+    position: absolute;
+    top: 30px;
+    left: 55px;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+.div-form {
+    /* background-color: red; */
+    /* width: 1200px; */
+    height: 600px;
+    margin-left: 50px;
+}
+
+.fullname {
+    padding-top: 10px;
+    /* padding-left: 85px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* margin-left: 70px; */
+}
+
+#firstname-input,
+#lastname-input {
+    width: 60%;
+    height: 45px;
+    /* width: 250px; */
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+#lastname-input {
+    /* margin-right: 135px; */
+}
+
+.Uni-id-div {
+    padding-top: 10px;
+    padding-left: 85px;
+}
+
+#UniId {
+    /* height: 40px; */
+    width: 60%;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+
+.nid-div {
+    padding-top: 10px;
+    padding-left: 85px;
+}
+
+#nid {
+    /* height: 40px; */
+
+    width: 60%;
+    height: 45px;
+    /* margin-top: 10px; */
+
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.mobile-div {
+    padding-top: 10px;
+    padding-left: 85px;
+}
+
+#mobile {
+    height: 40px;
+    width: 60%;
+    height: 45px;
+    /* margin-top: 10px; */
+
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.email-div {
+    padding-top: 10px;
+}
+
+#email {
+    /* height: 40px; */
+
+    width: 60%;
+    height: 45px;
+    /* margin-top: 10px; */
+
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.enroll-div {
+    padding-top: 10px;
+}
+
+#enroll {
+    /* height: 40px; */
+    width: 60%;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+/* .img-div{
+    padding-top: 10px;
+    padding-left: 85px;
+}
+
+#img{
+
+    height: 40px;
+    width:980px ;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 25px;
+    padding-left: 10px;
+    margin-left: 466.5px;
+}
+.img-label{
+    font-size: 25px;
+
+} */
+
+::placeholder {
+    font-size: large;
+    font-weight: bold;
+}
+
+.btn-addstudent {
+    /* float: right; */
+    background-color: #9E5788;
+    /* margin-right: 50px; */
+     margin-top: 40px; 
+    margin-left: 500px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    /* font-weight: bold; */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+    .btn-addstudent:hover {
+        background-color: black;
+    }
+
+
+.fullname input {
+    margin: 10px 10px 10px 0px;
+    /* display: flex; */
+    /* left: 48px; */
+    /* position: relative; */
+}
+
+.fullname span {
+    color: darkred;
+}

@@ -1,0 +1,146 @@
+﻿@model OnlineLearningManagementSystemProject.Models.Course
+
+@{
+    ViewData["Title"] = "addCourse";
+}
+
+@*<h1>add</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add" form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseName" class="control-label"></label>
+                <input asp-for="CourseName" class="form-control" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseCode" class="control-label"></label>
+                <input asp-for="CourseCode" class="form-control" />
+                <span asp-validation-for="CourseCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Credit" class="control-label"></label>
+                <input asp-for="Credit" class="form-control" />
+                <span asp-validation-for="Credit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lecture" class="control-label"></label>
+                <input asp-for="Lecture" class="form-control" />
+                <span asp-validation-for="Lecture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lab" class="control-label"></label>
+                <input asp-for="Lab" class="form-control" />
+                <span asp-validation-for="Lab" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Training" class="control-label"></label>
+                <input asp-for="Training" class="form-control" />
+                <span asp-validation-for="Training" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                  <label asp-for="formFile" class="control-label"></label>
+                <input type="file" asp-for="formFile" class="form-control" />
+                <span asp-validation-for="formFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/adduser.css" rel="stylesheet" />
+    <title>Add Course</title>
+</head>
+<body>
+    <div class="header-add-student">
+        <span asp-for="CourseName" class="add-student">Add Course</span>
+    </div>
+
+    <span asp-validation-for="CourseName" class="text-danger"></span>
+
+
+    <div class="div-form">
+            <form asp-action="Add" method="post" class="form" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="Uni-id-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="UniId" asp-for="CourseName" type="text" placeholder="COURSE NAME" required>
+                <span asp-validation-for="CourseName"></span>
+            </div>
+
+            <div class="nid-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="nid" type="text"  asp-for="CourseCode" placeholder="COURSE CODE" required>
+            </div>
+            <span asp-validation-for="CourseCode" class="text-danger"></span>
+            <div class="mobile-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="mobile" type="number" asp-for="Credit" placeholder="COURSE HOURS" required>
+            </div>
+            <span asp-validation-for="Credit" class="text-danger"></span>
+
+
+            <div class="email-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="email" type="number" asp-for="Lecture" placeholder="LECTURE HOURS" required>
+            </div>
+            <span asp-validation-for="Lecture" class="text-danger"></span>
+
+
+            <div class="enroll-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="enroll" type="number" asp-for="Lab" placeholder="LAB HOURS" required>
+            </div>
+            <span asp-validation-for="Lab" class="text-danger"></span>
+
+
+            <div class="enroll-div">
+                <!-- <label for="UniId">University Id</label class="uniid-label"> -->
+                <input id="enroll" type="number" asp-for="Training" placeholder="TRAINING HOURS" required>
+            </div>
+            <span asp-validation-for="Training" class="text-danger"></span>
+
+
+
+
+            <div class="img-div">
+                <label class="img-label" for="img">Course Picture</label>
+                <input id="img" type="file" asp-for="formFile" placeholder="Course Picture" accept="image/*">
+            </div>
+            <span asp-validation-for="formFile" class="text-danger"></span>
+
+            <button type="submit" class="btn-addstudent">Add Course</button>
+
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

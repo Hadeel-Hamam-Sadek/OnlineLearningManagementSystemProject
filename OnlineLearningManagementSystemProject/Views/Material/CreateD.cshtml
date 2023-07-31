@@ -1,0 +1,132 @@
+﻿@model OnlineLearningManagementSystemProject.Models.Material
+@{
+    ViewData["Title"] = "CreateD";
+}
+
+@*<h1>Create</h1>
+<h4>Material</h4>
+<hr />
+<div class="row">
+   <div class="col-md-4">
+        <form asp-action="CreateDocument" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <input type="hidden" name="courseId" value="@ViewBag.CourseId" />
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="staffId" value="@ViewBag.StaffId" />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="MaterialName" class="control-label"></label>
+                <input asp-for="MaterialName" class="form-control" />
+                <span asp-validation-for="MaterialName" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="formFile" class="control-label"></label>
+                <input type="file" asp-for="formFile" class="form-control" />
+                <span asp-validation-for="formFile" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Publish" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Create Material</title>
+    <link href="~/css/create-material.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="div-header">
+        <span class="iconinheader">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
+                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+            </svg>
+        </span>
+        <span class="Assignment">
+            Material
+
+        </span>
+    </div>
+
+
+    <div class="login-box">
+        <form asp-action="CreateDocument" enctype="multipart/form-data" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <input type="hidden" name="courseId" value="@ViewBag.CourseId" />
+            </div>
+
+            <div>
+                <input type="hidden" name="staffId" value="@ViewBag.StaffId" />
+            </div>
+
+
+
+            <div class="user-box">
+
+                <input asp-for="MaterialName" type="text" required />
+                <label asp-for="MaterialName">Title</label>
+                <span asp-validation-for="MaterialName"></span>
+            </div>
+
+
+            <span class="attach">Attach</span>
+            <div class="file">
+
+
+                <label asp-for="formFile" for="images" class="drop-container">
+                    <span class="drop-title">Drop files here</span>
+                    or
+                    <input type="file" asp-for="formFile" id="images" required />
+
+                </label>
+                <span asp-validation-for="formFile"></span>
+
+            </div>
+
+
+
+            <button class="btn-submit" type="submit">
+                <span class="circle1"></span>
+                <span class="circle2"></span>
+                <span class="circle3"></span>
+                <span class="circle4"></span>
+                <span class="circle5"></span>
+                <span class="text">Assign</span>
+            </button>
+
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+</body>

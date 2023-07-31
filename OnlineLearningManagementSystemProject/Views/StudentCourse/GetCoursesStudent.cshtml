@@ -1,0 +1,188 @@
+﻿
+@using OnlineLearningManagementSystemProject.ViewModel
+@model List<CourseViewModel>
+
+@*<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+                    <tr>
+                        <td>@course.courseName</td>
+                        <td>@course.courseCode</td>
+                    </tr>
+        }
+    </tbody>
+</table>*@
+
+
+
+@{
+    Layout = null;
+}
+
+
+
+
+
+<head>
+    <title>Student Courses</title>
+    <link href="~/css/Staff Courses.css" rel="stylesheet" />
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <nav class="header" id="nav">
+
+
+        <img src="~/images/logo2.png" alt="" class="logo">
+        <div class="navItems">
+            <div>
+                <i class="fa fa-solid fa-bookmark icons" id="icon1"></i>
+                 <a href="/StudentCourse/GetCoursesStudent/@ViewBag.StudentID" class="nav-link" onclick="changeIcon1()">Courses</a>
+            </div>
+            <div>
+                <i class="fa fa-solid fa-bookmark icons" id="icon2"></i>
+                <a href="@Url.Action("getStudentById", "Student", new { id = @ViewBag.StudentID })" class="nav-link" onclick="changeIcon2()">Profile</a>
+            </div>
+            <a href="@Url.Action("Logout", "Account")" class="nav-link">Logout</a>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <span class="courses">COURSES</span>
+    </div>
+
+
+  
+    <div class="cardsparent">
+
+        @foreach (var course in Model)
+        {
+            <div class="card">
+                <div class="imageincard">
+                    <img src="~/@course.pathimage" class="image">
+                </div>
+                <div class="card__body">
+                    <p>@course.courseName</p>
+                </div>
+                <span><a href="@Url.Action("GetLecturesByMaterial", "Material", new {id = course.courseid})" class ="linkinhover" target="_blank">Go to Course</a></span>
+            </div>
+        }
+    </div>
+    
+
+@*
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/WhatsApp Image 2023-05-12 at 22.58.45.jpg" class="image">
+            </div>
+            <div class="card__body">
+                <p>Artificial Intelligence Course</p>
+                <p>Hadeel Hamam Sadek</p>
+                <p>7 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/blog-2.jpg" class="image">
+            </div>
+            <div class="card__body">
+                <p>Web Development Course</p>
+                <p>Hayam Mahmoud Mohamed  </p>
+                <p>6 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/blog-1.jpg" class="image">
+            </div>
+            <div class="card__body">
+                <p>Computer Architecture Course</p>
+                <p>Asmaa Khamis Basiouny</p>
+                <p>8 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/blog-3.jpg" class="image">
+            </div>
+            <div class="card__body">
+                <p>Data Base Fundamentals Course</p>
+                <p>Ayman Ramadan Eisaa</p>
+                <p>4 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/cat-7.jpg" class="image">
+            </div>
+            <div class="card__body">
+                <p>Data Structure I Course</p>
+                <p>Doha Ahmed Ezzat</p>
+                <p>0 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/co_img_1539_1633434090.png" class="image">
+            </div>
+            <div class="card__body">
+                <p>Computer Graphics I Course</p>
+                <p>Abdallah Ahmed Bestawy</p>
+                <p>12 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/co_img_1539_1633434090.png" class="image">
+            </div>
+            <div class="card__body">
+                <p>Concepts of Programming Languages</p>
+                <p>Hamza Ahmed Hussien</p>
+                <p>2 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+        <div class="card">
+            <div class="imageincard">
+                <img src="img/co_img_1539_1633434090.png" class="image">
+            </div>
+            <div class="card__body">
+                <p>Visual Programming Course</p>
+                <p>Mahmoud Mohamed</p>
+                <p>6 Lectures</p>
+            </div>
+            <span><a href="#" class="linkinhover" target="_blank">Go to Course</a></span>
+        </div>
+
+    </div>*@
+
+    <footer style="height: 200px;"></footer>
+
+    <script src="~/js/student-courses.js"></script>
+
+</body>
+
+

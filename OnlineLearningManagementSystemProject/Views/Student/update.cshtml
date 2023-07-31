@@ -1,0 +1,164 @@
+﻿@model OnlineLearningManagementSystemProject.Models.Student
+
+@{
+    ViewData["Title"] = "update";
+}
+
+@*<h1>update</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <input type="hidden" asp-for="StudentID" />
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NationalID" class="control-label"></label>
+                <input asp-for="NationalID" class="form-control" />
+                <span asp-validation-for="NationalID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UniversityID" class="control-label"></label>
+                <input asp-for="UniversityID" class="form-control" />
+                <span asp-validation-for="UniversityID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnrollYear" class="control-label"></label>
+                <input asp-for="EnrollYear" class="form-control" />
+                <span asp-validation-for="EnrollYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentPicture" class="control-label"></label>
+                <input asp-for="StudentPicture" class="form-control" />
+                <span asp-validation-for="StudentPicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+*@
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Edit.css">
+    <title>Edit Student</title>
+</head>
+<body>
+    <div class="header-add-student">
+        <span class="add-student">Edit Student</span>
+    </div>
+
+
+    <div class="div-form">
+        <form method="post" class="form" asp-action="update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserID" />
+
+
+
+            <div class="fullname">
+                <label for="firstname-input" asp-for="FirstName" class="firstname-label">First Name</label>
+                <br>
+                <input type="text" asp-for="FirstName" id="firstname-input">
+                <span asp-validation-for="FirstName"></span>
+                <br>
+                <label for="lastname-input" asp-for="LastName" class="firstname-label">Last Name</label>
+                <br>
+                <input type="text" asp-for="LastName" id="lastname-input">
+                <span asp-validation-for="LastName"> </span>
+
+            </div>
+            <div class="fullname">
+                <label for="nid" asp-for="NationalID" class="firstname-label">National Id</label>
+                <br>
+                @*<input type="text" asp-for="NationalID" id="nid" type="text" minlength="14" maxlength="14" placeholder="National ID" required onkeyup="numericFilter(this);"/>*@
+                <input minlength="14" maxlength="14" type="text" asp-for="NationalID" id="nid" required>
+                <span asp-validation-for="NationalID"></span>
+
+            </div>
+
+            <div class="fullname">
+                <label for="UniId" asp-for="UniversityID" class="firstname-label"> University Id</label>
+                <br>
+                <input asp-for="UniversityID" id="UniId" type="number">
+                <span asp-validation-for="UniversityID"></span>
+
+            </div>
+
+            <div class="fullname">
+                <label for="mobile" asp-for="Mobile" class="firstname-label"> Mobile Number </label>
+                <br>
+                <input asp-for="Mobile" id="mobile" type="text">
+                <span asp-validation-for="Mobile"></span>
+
+            </div>
+
+            <div class="fullname">
+                <label for="enroll" class="firstname-label" asp-for="EnrollYear">Enroll Year</label>
+                <br>
+                <input asp-for="EnrollYear" id="enroll" type="number">
+                <span asp-validation-for="EnrollYear"></span>
+
+            </div>
+
+            @*<div class="img-div">
+                <label class="img-label" for="img">Student Picture</label>
+                <input id="img"type="file" placeholder="Student Picture" accept="image/*">
+            </div> *@
+
+
+            <button type="submit" class="btn-addstudent">Upate Student</button>
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </form>
+    </div>
+
+
+</body>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

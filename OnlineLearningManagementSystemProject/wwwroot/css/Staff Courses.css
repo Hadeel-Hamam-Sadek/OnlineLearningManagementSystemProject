@@ -1,0 +1,235 @@
+body {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    /* height: 1800px; */
+}
+
+#nav {
+    background-color: #7D467F;
+    /* width: 100%; */
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    color: white;
+    padding-left: 25px;
+}
+
+.logo {
+    width: 116px;
+}
+
+.navItems {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    margin-right: 20px;
+    justify-content: space-around;
+}
+
+    .navItems a {
+        position: relative;
+        text-decoration: none;
+        color: white;
+    }
+
+    .navItems div {
+        width: 30%;
+    }
+
+#icon1,
+#icon2 {
+    font-size: 165px;
+    color: #481D3B;
+    position: absolute;
+    top: -115px;
+    transition: top 2s,color;
+}
+
+#icon1 {
+    right: 21%;
+    height: 60%;
+}
+
+#icon2 {
+    right: 11%;
+}
+
+    #icon1:hover,
+    #icon2:hover {
+        top: -17px;
+    }
+
+
+
+/*#nav {
+    background-color: #7D467F;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    color: white;
+    padding-left: 25px;
+}
+
+.logo {
+    width: 116px;
+}
+
+.navItems {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    justify-content: space-around;
+}
+
+    .navItems a {
+        position: relative;
+    }
+
+    .navItems div {
+        width: 30%;
+    }
+
+#icon1,
+#icon2 {
+    font-size: 165px;
+    color: #481D3B;
+    position: absolute;
+    top: -115px;
+    transition: top 2s,color;
+}
+
+#icon1 {
+    right: 21%;*/
+/* left: auto; */
+/* margin-left: -5%; */
+/*height: 60%;*/
+/* text-align: center; */
+/*}
+
+#icon2 {
+    right: 11%;
+}
+
+    #icon1:hover,
+    #icon2:hover {
+        top: -17px;
+    }*/
+
+
+.container {
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/page-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.courses {
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    padding-left: 150px;
+}
+
+.cardsparent {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    justify-content: space-evenly;
+}
+
+/* CARD */
+
+.card {
+    --bg: #D9D9D9;
+    --hover-bg: #600844;
+    --hover-text: black;
+    width: 30ch;
+    height: 37ch;
+    background: var(--bg);
+    /* padding: 1.5em; */
+    /* padding-block: 0.4em; */
+    margin-top: 50px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s cubic-bezier(.6,.4,0,1),transform .15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1em; */
+}
+
+.card__body {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    /* padding-left: 20px; */
+    /* padding-bottom: 35px; */
+    padding-top: 30px;
+    position: relative;
+    height: 50%;
+}
+
+.card span {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hover-text);
+    border-radius: 5px;
+    font-weight: bold;
+    top: 100%;
+    transition: all .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card:hover span {
+    top: 0;
+    font-size: 1.2em;
+}
+
+.card:hover {
+    background: var(--hover-bg);
+    transform: scale(0.95);
+    box-shadow: 1px 1px 6px 4px #696467;
+}
+
+    .card:hover > div, .card:hover > strong {
+        opacity: 0;
+    }
+
+.linkinhover {
+    color: white;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+    .linkinhover:hover {
+        color: black;
+    }
+
+.imageincard {
+    /* position: relative; */
+    width: 100%;
+    height: 50%;
+    /* object-fit: fill; */
+}
+
+.image {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+}
